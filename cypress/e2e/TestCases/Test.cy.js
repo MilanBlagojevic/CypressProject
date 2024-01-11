@@ -2,8 +2,9 @@
 
 describe('Test functionality',()=>{
 
-    it('Verify Page title',()=>{
+    it('Visit specified URL',()=>{
 
         cy.visit('https://www.google.com/');
+        
     })
 })
