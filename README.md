@@ -1,4 +1,4 @@
-# KP_CypressProject
+# CypressProject
 
 
 Milan Blagojevic - PanonIT
