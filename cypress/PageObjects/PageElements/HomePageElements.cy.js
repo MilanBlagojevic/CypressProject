@@ -1,15 +1,17 @@
 /// <reference types="cypress" />
 
+const or = require('../../locators.json')
+
 export default class HomePageElements{
 
 
     customerLogin(){
 
-        return cy.get('ul.header:nth-child(2) > li:nth-child(2) > a:nth-child(1)')
+        return cy.get(or.homepage.customerLogin)
     }
 
     customerRegister(){
 
-        return cy.get('ul.header:nth-child(2) > li:nth-child(3) > a:nth-child(1)')
+        return cy.xpath(or.homepage.customerRegister)
     }
 }

@@ -1,18 +1,18 @@
 /// <reference types="cypress" />
 
-import HomePageElements from "../PageElements/HomePageElements";
+import HomePageElements from "../PageElements/HomePageElements.cy";
 
 export default class HomePageActions{
 
 
     constructor(){
 
-        globalThis.element = new HomePageElements()
+        globalThis.homepageelement = new HomePageElements()
     }
 
     navigateToURL(){
 
-        cy.visit('https://magento.softwaretestingboard.com/');
+        cy.visit('/');
     }
 
     validateTitle(){
@@ -22,12 +22,12 @@ export default class HomePageActions{
 
     loginAsCustomer(){
 
-        element.CustomerLogin().click()
+        homepageelement.CustomerLogin().click()
     }
 
     registerAsCustomer(){
 
-        element.customerRegister().click()
+        homepageelement.customerRegister().click()
     }
 
 }

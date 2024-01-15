@@ -1,0 +1,17 @@
+{
+    "homepage":{
+    "customerLogin":".panel > .header > .authorization-link > a",
+    "customerRegister":"/html/body/div[2]/header/div[1]/div/ul/li[3]/a"
+    },
+
+    "registercustomerpage":{
+        "firstName":"#firstname",
+        "lastName":"#lastname",
+        "email":"#email_address",
+        "password":"#password",
+        "passwordConfirm":"#password-confirmation",
+        "createAccountBtn":"#form-validate > .actions-toolbar > div.primary > .action"        
+    }
+
+
+}
