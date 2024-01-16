@@ -2,32 +2,24 @@
 
 import HomePageElements from "../PageElements/HomePageElements.cy";
 
-export default class HomePageActions{
+export default class HomePageActions {
+  constructor() {
+    globalThis.homepageelement = new HomePageElements();
+  }
 
+  navigateToURL() {
+    cy.visit("/");
+  }
 
-    constructor(){
+  validateTitle() {
+    return cy.title();
+  }
 
-        globalThis.homepageelement = new HomePageElements()
-    }
+  loginAsCustomer() {
+    homepageelement.customerLogin().click();
+  }
 
-    navigateToURL(){
-
-        cy.visit('/');
-    }
-
-    validateTitle(){
-
-        return cy.title()
-    }
-
-    loginAsCustomer(){
-
-        homepageelement.CustomerLogin().click()
-    }
-
-    registerAsCustomer(){
-
-        homepageelement.customerRegister().click()
-    }
-
+  registerAsCustomer() {
+    homepageelement.customerRegister().click();
+  }
 }

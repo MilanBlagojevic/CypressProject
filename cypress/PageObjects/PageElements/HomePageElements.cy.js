@@ -1,17 +1,13 @@
 /// <reference types="cypress" />
 
-const or = require('../../locators.json')
+const or = require("../../locators.json");
 
-export default class HomePageElements{
+export default class HomePageElements {
+  customerLogin() {
+    return cy.xpath(or.homepage.customerLogin);
+  }
 
-
-    customerLogin(){
-
-        return cy.get(or.homepage.customerLogin)
-    }
-
-    customerRegister(){
-
-        return cy.xpath(or.homepage.customerRegister)
-    }
+  customerRegister() {
+    return cy.xpath(or.homepage.customerRegister);
+  }
 }

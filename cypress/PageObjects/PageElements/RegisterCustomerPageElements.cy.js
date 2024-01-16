@@ -1,36 +1,29 @@
 /// <reference types="cypress" />
 
-const or = require('../../locators.json')
+const or = require("../../locators.json");
 
-export default class RegisterCustomerPageElements{
+export default class RegisterCustomerPageElements {
+  firstNameField() {
+    return cy.get(or.registercustomerpage.firstName);
+  }
 
-    firstNameField(){
+  lastNameField() {
+    return cy.get(or.registercustomerpage.lastName);
+  }
 
-        return cy.get(or.registercustomerpage.firstName)
-    }
+  emailField() {
+    return cy.get(or.registercustomerpage.email);
+  }
 
-    lastNameField(){
+  passwordField() {
+    return cy.get(or.registercustomerpage.password);
+  }
 
-        return cy.get(or.registercustomerpage.lastName)
-    }
+  passwordConfirmField() {
+    return cy.get(or.registercustomerpage.passwordConfirm);
+  }
 
-    emailField(){
-
-        return cy.get(or.registercustomerpage.email)
-    }
-
-    passwordField(){
-
-        return cy.get(or.registercustomerpage.password)
-    }
-
-    passwordConfirmField(){
-
-        return cy.get(or.registercustomerpage.passwordConfirm)
-    }
-
-    createAccountBtn(){
-
-        cy.get(or.registercustomerpage.createAccountBtn)
-    }
+  createAccountButton() {
+    return cy.xpath(or.registercustomerpage.createAccountSubmit);
+  }
 }

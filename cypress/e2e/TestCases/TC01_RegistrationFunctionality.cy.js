@@ -3,29 +3,20 @@
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
 import RegisterCustomerPageActions from "../../PageObjects/PageActions/RegisterCustomerPageActions.cy";
 
-describe('Register functionality',()=>{
+describe("Register functionality", () => {
+  const homePage = new HomePageActions();
+  const createCust = new RegisterCustomerPageActions();
 
-    const homePage = new HomePageActions()
-    const createCust = new RegisterCustomerPageActions()
+  beforeEach(() => {
+    homePage.navigateToURL();
+  });
 
-    beforeEach(()=>{
+  it("Validate Title of the Page", () => {
+    homePage.validateTitle().should("eq", "Home Page");
+  });
 
-        homePage.navigateToURL()
-
-
-    })
-
-    it('Validate Title of the Page',()=>{
-
-        homePage.validateTitle().should('eq','Home Page')
-       
-    })
-
-    it('Register as Customer',()=>{
-
-        homePage.registerAsCustomer()
-        createCust.addCustomerDetails("Milan","Testing","milan.testing.90@email.com", "Milantesting90","MilanTesting90")
-       
-    })
-    
-})
+  it("Register as Customer", () => {
+    homePage.registerAsCustomer();
+    createCust.addCustomerDetails("Milan", "Testing", "milan.testing.901@email.com", "Milantesting90", "MilanTesting90");
+  });
+});

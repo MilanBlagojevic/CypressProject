@@ -1,17 +1,21 @@
 {
-    "homepage":{
-    "customerLogin":".panel > .header > .authorization-link > a",
-    "customerRegister":"/html/body/div[2]/header/div[1]/div/ul/li[3]/a"
-    },
+  "homepage": {
+    "customerLogin": "/html/body/div[2]/header/div[1]/div/ul/li[2]/a",
+    "customerRegister": "/html/body/div[2]/header/div[1]/div/ul/li[3]/a"
+  },
 
-    "registercustomerpage":{
-        "firstName":"#firstname",
-        "lastName":"#lastname",
-        "email":"#email_address",
-        "password":"#password",
-        "passwordConfirm":"#password-confirmation",
-        "createAccountBtn":"#form-validate > .actions-toolbar > div.primary > .action"        
-    }
+  "registercustomerpage": {
+    "firstName": "#firstname",
+    "lastName": "#lastname",
+    "email": "#email_address",
+    "password": "#password",
+    "passwordConfirm": "#password-confirmation",
+    "createAccountSubmit": "//button[@type='submit' and @class='action submit primary' and @title='Create an Account']"
+  },
 
-
+  "logincustomerpage": {
+    "loginEmail": "#email",
+    "loginPassword": ".login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass",
+    "signInSubmit": "//button[@class='action login primary']"
+  }
 }
