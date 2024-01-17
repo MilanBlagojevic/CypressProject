@@ -17,6 +17,6 @@ describe("Login functionality", () => {
 
   it("Login as Customer", () => {
     homePage.loginAsCustomer();
-    loginPage.loginCustomerDetails("milan.testing.90@email.com", "ilantesting90");
+    loginPage.loginCustomerDetails("milan.testing.90@email.com", "Milantesting90");
   });
 });

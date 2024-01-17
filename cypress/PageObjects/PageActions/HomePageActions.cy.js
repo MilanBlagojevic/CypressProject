@@ -22,4 +22,7 @@ export default class HomePageActions {
   registerAsCustomer() {
     homepageelement.customerRegister().click();
   }
+  whatsNewPage() {
+    homepageelement.whatsNewTab().click();
+  }
 }

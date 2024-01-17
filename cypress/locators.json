@@ -1,7 +1,8 @@
 {
   "homepage": {
     "customerLogin": "/html/body/div[2]/header/div[1]/div/ul/li[2]/a",
-    "customerRegister": "/html/body/div[2]/header/div[1]/div/ul/li[3]/a"
+    "customerRegister": "/html/body/div[2]/header/div[1]/div/ul/li[3]/a",
+    "whatsNew": "#ui-id-3 > span"
   },
 
   "registercustomerpage": {

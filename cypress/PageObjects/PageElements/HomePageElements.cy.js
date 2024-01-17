@@ -10,4 +10,7 @@ export default class HomePageElements {
   customerRegister() {
     return cy.xpath(or.homepage.customerRegister);
   }
+  whatsNewTab() {
+    return cy.get(or.homepage.whatsNew);
+  }
 }

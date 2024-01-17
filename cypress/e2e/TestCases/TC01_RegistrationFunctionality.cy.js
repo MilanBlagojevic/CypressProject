@@ -17,6 +17,6 @@ describe("Register functionality", () => {
 
   it("Register as Customer", () => {
     homePage.registerAsCustomer();
-    createCust.addCustomerDetails("Milan", "Testing", "milan.testing.901@email.com", "Milantesting90", "MilanTesting90");
+    createCust.addCustomerDetails("Milan", "Testing", "milan.testing.909@email.com", "Milantesting90", "MilanTesting90");
   });
 });
