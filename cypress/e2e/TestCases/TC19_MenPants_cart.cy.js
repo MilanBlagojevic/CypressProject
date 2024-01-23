@@ -6,7 +6,7 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
 
-describe("TC18 - Men_Tanks", () => {
+describe("TC19 - Men_Pants", () => {
   const homePage = new HomePageActions();
 
   beforeEach(() => {
