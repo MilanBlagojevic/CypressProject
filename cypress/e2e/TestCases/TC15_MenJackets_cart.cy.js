@@ -6,7 +6,7 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
 
-describe("TC13 - Women_Tanks", () => {
+describe("TC15 - Men_Jackets", () => {
   const homePage = new HomePageActions();
 
   beforeEach(() => {
@@ -18,17 +18,17 @@ describe("TC13 - Women_Tanks", () => {
   });
 
   it("Add to Cart functionality", () => {
-    cy.contains('Women').trigger('mouseover', {force: true});
-    cy.contains('Tops').trigger('mouseover', {force: true});
-    cy.contains('Bras & Tanks').click({force: true});
+
+    cy.get('#ui-id-5 > :nth-child(2)').click();
+    cy.get('.categories-menu > :nth-child(2) > :nth-child(2) > a').click();
     cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
 
     cy.get(':nth-child(3) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1700 > .price').contains('$29.00');
+    cy.get('#product-price-302 > .price').contains('$47.00');
     cy.get('.stock > span').contains('In stock');
-    cy.get('#option-label-size-143-item-170').click();
-    cy.get('#option-label-color-93-item-56').click();
-    cy.get('#qty').clear().type('5');
+    cy.get('#option-label-size-143-item-166').click();
+    cy.get('#option-label-color-93-item-50').click();
+    cy.get('#qty').clear().type('2');
     cy.get('#product-addtocart-button').click();
   });
 });

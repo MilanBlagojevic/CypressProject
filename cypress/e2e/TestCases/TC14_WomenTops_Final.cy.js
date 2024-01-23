@@ -6,7 +6,7 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
 
-describe("TC11 - Women_Hoodies", () => {
+describe("TC14 - Women_Final", () => {
   const homePage = new HomePageActions();
 
   beforeEach(() => {
@@ -48,5 +48,19 @@ describe("TC11 - Women_Hoodies", () => {
     cy.xpath("//input[@class='input-text' and @type='text' and @name='street[0]']").type('Testerska 17');
     cy.xpath("//input[@class='input-text' and @type='text' and @name='city']").type('Novi Sad');
     cy.xpath("//select[@class='select' and @name='region_id']").select('Florida');
+    cy.xpath("//input[@class='input-text' and @type='text' and @name='postcode']").type('63101');
+    cy.xpath("//select[@class='select' and @name='country_id']").select('Mongolia');
+    cy.xpath("//input[@class='input-text' and @type='text' and @name='telephone']").type('0800223344556677');
+    cy.get(':nth-child(1) > :nth-child(1) > .radio').check();
+    cy.get('.button > span').click();
+
+    cy.wait(2000);
+
+    cy.get('.button > span').click();
+
+    cy.wait(2000);
+
+    cy.get('.sub > .amount > .price').should('contain','$145.00');
+    cy.get('.payment-method-content > :nth-child(4) > div.primary > .action > span').click();
   });
 });
