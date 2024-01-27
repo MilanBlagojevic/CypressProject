@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("TC10 - Women_Jackets", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -18,17 +22,16 @@ describe("TC10 - Women_Jackets", () => {
   });
 
   it("Add to Cart functionality", () => {
-    cy.contains('Women').trigger('mouseover', {force: true});
-    cy.contains('Tops').trigger('mouseover', {force: true});
-    cy.contains('Jackets').click({force: true});
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
+    homePage.womenPage();
+    homePage.womenJacketsPage();
+    shopPageElements.sortByDropDown().select('Price');
 
-    cy.get(':nth-child(1) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1332 > .price').contains('$32.00');
-    cy.get('.stock > span').contains('In stock');
-    cy.get('#option-label-size-143-item-168').click();
-    cy.get('#option-label-color-93-item-50').click();
-    cy.get('#qty').clear().type('2');
-    cy.get('#product-addtocart-button').click();
+    shopPageElements.jadeYogaJacket().click();
+    shopPageElements.jadeYogaJacketPrice().contains('$32.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.sizeM().click();
+    shopPageElements.colorBlue().click();
+    shopPageElements.quantityField().clear().type('2');
+    shopPage.addToCart();
   });
 });

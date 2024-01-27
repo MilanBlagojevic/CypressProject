@@ -2,7 +2,28 @@
   "homepage": {
     "customerLogin": "/html/body/div[2]/header/div[1]/div/ul/li[2]/a",
     "customerRegister": "/html/body/div[2]/header/div[1]/div/ul/li[3]/a",
-    "whatsNew": "#ui-id-3 > span"
+    "whatsNew": "#ui-id-3 > span",
+
+    "womenTab":"#ui-id-4 > :nth-child(2)",
+    "womenJackets":".categories-menu > :nth-child(2) > :nth-child(2) > a",
+    "WomenHoodies":".categories-menu > :nth-child(2) > :nth-child(1) > a",
+    "WomenTees":".categories-menu > :nth-child(2) > :nth-child(3) > a",
+    "WomenTanks":".categories-menu > :nth-child(2) > :nth-child(4) > a",
+    "WomenPants":".categories-menu > :nth-child(4) > :nth-child(1) > a",
+    "WomenShorts":".categories-menu > :nth-child(4) > :nth-child(2) > a",
+
+    "menTab":"#ui-id-5 > :nth-child(2)",
+    "menJackets":".categories-menu > :nth-child(2) > :nth-child(2) > a",
+    "menHoodies":".categories-menu > :nth-child(2) > :nth-child(1) > a",
+    "menTees":".categories-menu > :nth-child(2) > :nth-child(3) > a",
+    "menTanks":".categories-menu > :nth-child(2) > :nth-child(4) > a",
+    "menPants":".categories-menu > :nth-child(4) > :nth-child(1) > a",
+    "menShorts":".categories-menu > :nth-child(4) > :nth-child(2) > a",
+
+    "gearTab":"#ui-id-6 > :nth-child(2)",
+    "gearBags":"dd > .items > :nth-child(1) > a",
+    "gearFitness":"dd > .items > :nth-child(2) > a",
+    "gearWatches":"dd > .items > :nth-child(3) > a"
   },
 
   "registercustomerpage": {
@@ -22,6 +43,40 @@
   "shoppingpage":{
     "sortBy":":nth-child(4) > .toolbar-sorter > #sorter",
     "quantity":"#qty",
-    "addTocart":"#product-addtocart-button > span"
+    "addToCart":"#product-addtocart-button > span",
+    "inStock":".stock > span",
+
+    "sizeXS":"#option-label-size-143-item-166",
+    "sizeS":"#option-label-size-143-item-167",
+    "sizeM":"#option-label-size-143-item-168",
+    "sizeL":"#option-label-size-143-item-169",
+    "sizeXL":"#option-label-size-143-item-170",
+    "size28":"#option-label-size-143-item-171",
+    "size29":"#option-label-size-143-item-172",
+    "size30":"#option-label-size-143-item-173",
+    "size31":"#option-label-size-143-item-174",
+    "size32":"#option-label-size-143-item-175",
+    "size33":"#option-label-size-143-item-176",
+    "size34":"#option-label-size-143-item-177",
+    "size36":"#option-label-size-143-item-178",
+
+    "colorBlack":"#option-label-color-93-item-49",
+    "colorBlue":"#option-label-color-93-item-50",
+    "colorPink":"#option-label-color-93-item-57",
+    "colorGreen":"#option-label-color-93-item-53",
+    "colorOrange":"#option-label-color-93-item-56",
+    "colorYellow":"#option-label-color-93-item-60",
+    "colorGray":"#option-label-color-93-item-52",
+    "colorPurple":"#option-label-color-93-item-57",
+    "colorRed":"#option-label-color-93-item-58",
+    "colorBrown":"#option-label-color-93-item-51",
+    "colorWhite":"#option-label-color-93-item-59",
+
+    "jadeYogaJacket":"a.product-item-link[href='https://magento.softwaretestingboard.com/jade-yoga-jacket.html']",
+    "jadeYogaJacketPrice":"#product-price-1332 > .price",
+
+
+    "kenobyTrailJacket":"a.product-item-link[href='https://magento.softwaretestingboard.com/kenobi-trail-jacket.html']",
+    "kenobyTrailJacketPrice":"#product-price-302 > .price"
   }
 }
