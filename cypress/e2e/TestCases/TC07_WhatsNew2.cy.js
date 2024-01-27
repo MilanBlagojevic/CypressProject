@@ -1,9 +1,13 @@
 /// <reference types="cypress" />
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("What's new functionality", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -15,8 +19,8 @@ describe("What's new functionality", () => {
 
   it("What's new page", () => {
     homePage.whatsNewPage();
-    cy.xpath("//*[@id='maincontent']/div[4]/div[1]/div[2]/div[3]/div/div/ol/li[2]/div/div/strong/a").click();
-    cy.get("#product-price-446 > .price").should("contain", "$29.00");
+    shopPageElements.gobiHeatTee().click();
+    shopPageElements.gobiHeatTeePrice().contains('$29.00');
     cy.get(".stock > span").should("contain", "In stock");
   });
 });

@@ -6,11 +6,11 @@
 
     "womenTab":"#ui-id-4 > :nth-child(2)",
     "womenJackets":".categories-menu > :nth-child(2) > :nth-child(2) > a",
-    "WomenHoodies":".categories-menu > :nth-child(2) > :nth-child(1) > a",
-    "WomenTees":".categories-menu > :nth-child(2) > :nth-child(3) > a",
-    "WomenTanks":".categories-menu > :nth-child(2) > :nth-child(4) > a",
-    "WomenPants":".categories-menu > :nth-child(4) > :nth-child(1) > a",
-    "WomenShorts":".categories-menu > :nth-child(4) > :nth-child(2) > a",
+    "womenHoodies":".categories-menu > :nth-child(2) > :nth-child(1) > a",
+    "womenTees":".categories-menu > :nth-child(2) > :nth-child(3) > a",
+    "womenTanks":".categories-menu > :nth-child(2) > :nth-child(4) > a",
+    "womenPants":".categories-menu > :nth-child(4) > :nth-child(1) > a",
+    "womenShorts":".categories-menu > :nth-child(4) > :nth-child(2) > a",
 
     "menTab":"#ui-id-5 > :nth-child(2)",
     "menJackets":".categories-menu > :nth-child(2) > :nth-child(2) > a",
@@ -23,7 +23,9 @@
     "gearTab":"#ui-id-6 > :nth-child(2)",
     "gearBags":"dd > .items > :nth-child(1) > a",
     "gearFitness":"dd > .items > :nth-child(2) > a",
-    "gearWatches":"dd > .items > :nth-child(3) > a"
+    "gearWatches":"dd > .items > :nth-child(3) > a",
+
+    "saleTab":"#ui-id-8 > span"
   },
 
   "registercustomerpage": {
@@ -72,11 +74,51 @@
     "colorBrown":"#option-label-color-93-item-51",
     "colorWhite":"#option-label-color-93-item-59",
 
+    "phoebeZipper":"a.product-item-link[title='Phoebe Zipper Sweatshirt']",
+    "phoebeZipperPrice":"#product-price-1130 > .price",
+    "gobiHeatTee":"a.product-item-link[title='Gobi HeatTec® Tee']",
+    "gobiHeatTeePrice":"#product-price-446 > .price",
+    "stellarSolarJacket":"a.product-item-link[title='Stellar Solar Jacket']",
+    "stellarSolarJacketPrice":"#product-price-1220 > .price",
+
     "jadeYogaJacket":"a.product-item-link[href='https://magento.softwaretestingboard.com/jade-yoga-jacket.html']",
     "jadeYogaJacketPrice":"#product-price-1332 > .price",
-
+    "autumnPullie":"a.product-item-link[href='https://magento.softwaretestingboard.com/autumn-pullie.html']",
+    "autumnPulliePrice":"#product-price-1076 > .price",
+    "divaGymTee":"a.product-item-link[href='https://magento.softwaretestingboard.com/diva-gym-tee.html']",
+    "divaGymTeePrice":"#product-price-1540 > .price",
+    "zoeTank":"a.product-item-link[href='https://magento.softwaretestingboard.com/zoe-tank.html']",
+    "zoeTankPrice":"#product-price-1700 > .price",
 
     "kenobyTrailJacket":"a.product-item-link[href='https://magento.softwaretestingboard.com/kenobi-trail-jacket.html']",
-    "kenobyTrailJacketPrice":"#product-price-302 > .price"
+    "kenobyTrailJacketPrice":"#product-price-302 > .price",
+    "heroHoodie":"a.product-item-link[href='https://magento.softwaretestingboard.com/hero-hoodie.html']",
+    "heroHoodiePrice":"#product-price-158 > .price",
+    "zoltanGymTee":"a.product-item-link[href='https://magento.softwaretestingboard.com/zoltan-gym-tee.html']",
+    "zoltanGymTeePrice":"#product-price-542 > .price",
+    "tiberiusGymTank":"a.product-item-link[href='https://magento.softwaretestingboard.com/tiberius-gym-tank.html']",
+    "tiberiusGymTankPrice":"#product-price-712 > .price",
+    "kratosGymPants":"a.product-item-link[href='https://magento.softwaretestingboard.com/kratos-gym-pant.html']",
+    "kratosGymPantsPrice":"#product-price-789 > .price",
+    "lonoYogaShorts":"a.product-item-link[href='https://magento.softwaretestingboard.com/lono-yoga-short.html']",
+    "lonoYogaShortsPrice":"#product-price-950 > .price",
+
+    "crownSummitBackpack":"a.product-item-link[href='https://magento.softwaretestingboard.com/crown-summit-backpack.html']",
+    "crownSummitBackpackPrice":"#product-price-3 > .price",
+    "spriteFoamRoller":"a.product-item-link[href='https://magento.softwaretestingboard.com/sprite-foam-roller.html']",
+    "spriteFoamRollerPrice":"#product-price-22 > .price",
+    "aimAnalogWatch":"a.product-item-link[href='https://magento.softwaretestingboard.com/aim-analog-watch.html']",
+    "aimAnalogWatchPrice":".price",
+
+    "bessaYogaShort":"a.product-item-link[href='https://magento.softwaretestingboard.com/bess-yoga-short.html']",
+    "bessaYogaShortPrice":"#product-price-1983 > .price",
+    "pierceGymShort":"a.product-item-link[href='https://magento.softwaretestingboard.com/pierce-gym-short.html']",
+    "pierceGymShortPrice":"#product-price-1028 > .price",
+    "fusionBackpack":"a.product-item-link[title='Fusion Backpack']",
+    "fusionBackpackPrice":"#product-price-6 > .price",
+
+    "womenDeals":".sale-main > .content > .more",
+    "menDeals":".sale-mens > .content > .more",
+    "lumaDeals":".sale-women > .content > .more"
   }
 }

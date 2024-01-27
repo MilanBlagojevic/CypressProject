@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("TC14 - Women_Final", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -18,18 +22,16 @@ describe("TC14 - Women_Final", () => {
   });
 
   it("Add to Cart functionality", () => {
-    cy.contains('Women').trigger('mouseover', {force: true});
-    cy.contains('Tops').trigger('mouseover', {force: true});
-    cy.contains('Bras & Tanks').click({force: true});
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-
-    cy.get(':nth-child(3) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1700 > .price').contains('$29.00');
-    cy.get('.stock > span').contains('In stock');
-    cy.get('#option-label-size-143-item-170').click();
-    cy.get('#option-label-color-93-item-56').click();
-    cy.get('#qty').clear().type('5');
-    cy.get('#product-addtocart-button').click();
+    homePage.womenPage();
+    homePage.womenTanksPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.zoeTank().click();
+    shopPageElements.zoeTankPrice().contains('$29.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.sizeXL().click();
+    shopPageElements.colorOrange().click();
+    shopPageElements.quantityField().clear().type('5');
+    shopPage.addToCart();
 
     cy.wait(2000);
 

@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
-describe("TC23 - Gear_Bags", () => {
+describe("TC23 - Gear_Fitness", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -18,14 +22,13 @@ describe("TC23 - Gear_Bags", () => {
   });
 
   it("Add to Cart functionality", () => {
-    cy.contains('Gear').trigger('mouseover', {force: true});
-    cy.contains('Fitness Equipment').click({force: true});
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-
-    cy.get(':nth-child(7) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-22 > .price').contains('$19.00');
-    cy.get('.stock > span').contains('In stock');
-    cy.get('#qty').clear().type('3');
-    cy.get('#product-addtocart-button').click();
+    homePage.gearPage();
+    homePage.gearFitnessPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.spriteFoamRoller().click();
+    shopPageElements.spriteFoamRollerPrice().contains('$19.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.quantityField().clear().type('3');
+    shopPage.addToCart();
   });
 });

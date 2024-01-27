@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("TC24 - Gear_Watches", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -18,14 +22,14 @@ describe("TC24 - Gear_Watches", () => {
   });
 
   it("Add to Cart functionality", () => {
-    cy.contains('Gear').trigger('mouseover', {force: true});
-    cy.contains('Watches').click({force: true});
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-
-    cy.get(':nth-child(2) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('.price').contains('$45.00');
-    cy.get('.stock > span').contains('In stock');
-    cy.get('#qty').clear().type('2');
-    cy.get('#product-addtocart-button').click();
+    
+    homePage.gearPage();
+    homePage.gearWatchesPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.aimAnalogWatch().click();
+    shopPageElements.aimAnalogWatchPrice().contains('$45.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.quantityField().clear().type('2');
+    shopPage.addToCart();
   });
 });

@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("TC25 - Sale_Shopping", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -20,36 +24,35 @@ describe("TC25 - Sale_Shopping", () => {
   it("Shopping functionality", () => {
     cy.contains('Sale').click({force: true});
 
-    cy.get('.sale-main > .content > .more').click();
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-    cy.get(':nth-child(1) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1983 > .price').contains('$28.00');
-    cy.get('#option-label-size-143-item-173').click();
-    cy.get('#option-label-color-93-item-60').click();
-    cy.get('#qty').clear().type('2');
-    cy.get('#product-addtocart-button > span').click();
+    homePage.salePage();
+    homePage.womenDealsPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.bessaYogaShort().click();
+    shopPageElements.bessaYogaShortPrice().contains('$28.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.size28().click();
+    shopPageElements.colorPurple().click();
+    shopPageElements.quantityField().clear().type('3');
+    shopPage.addToCart();
 
-    cy.contains('Sale').click({force: true});
+    homePage.salePage();
+    homePage.menDealsPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.pierceGymShort().click();
+    shopPageElements.pierceGymShortPrice().contains('$27.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.size36().click();
+    shopPageElements.colorBlack().click();
+    shopPageElements.quantityField().clear().type('6');
+    shopPage.addToCart();
 
-    cy.get('.sale-mens > .content > .more').click();
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-    cy.get(':nth-child(1) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1028 > .price').contains('$27.00');
-    cy.get('#option-label-size-143-item-178').click();
-    cy.get('#option-label-color-93-item-58').click();
-    cy.get('#qty').clear().type('3');
-    cy.get('#product-addtocart-button').click();
-
-    cy.contains('Sale').click({force: true});
-
-    cy.get('.sale-womens-t-shirts > .content > .more').click();
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-    cy.get(':nth-child(1) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1556 > .price').contains('$22.00');
-    cy.get('#option-label-size-143-item-166').click();
-    cy.get('#option-label-color-93-item-57').click();
-    cy.get('#qty').clear().type('4');
-    cy.get('#product-addtocart-button').click();
+    homePage.salePage();
+    homePage.lumaDealsPage();
+    shopPageElements.fusionBackpack().click();
+    shopPageElements.fusionBackpackPrice().contains('$59.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.quantityField().clear().type('4');
+    shopPage.addToCart();
 
     cy.wait(2000);
 

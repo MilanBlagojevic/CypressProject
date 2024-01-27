@@ -25,7 +25,6 @@ describe("TC10 - Women_Jackets", () => {
     homePage.womenPage();
     homePage.womenJacketsPage();
     shopPageElements.sortByDropDown().select('Price');
-
     shopPageElements.jadeYogaJacket().click();
     shopPageElements.jadeYogaJacketPrice().contains('$32.00');
     shopPageElements.inStock().contains('In stock');

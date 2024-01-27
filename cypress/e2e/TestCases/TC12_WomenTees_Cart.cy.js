@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("TC12 - Women_Tees", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -18,17 +22,15 @@ describe("TC12 - Women_Tees", () => {
   });
 
   it("Add to Cart functionality", () => {
-    cy.contains('Women').trigger('mouseover', {force: true});
-    cy.contains('Tops').trigger('mouseover', {force: true});
-    cy.contains('Tees').click({force: true});
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Product Name');
-
-    cy.get(':nth-child(2) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-1540 > .price').contains('$32.00');
-    cy.get('.stock > span').contains('In stock');
-    cy.get('#option-label-size-143-item-169').click();
-    cy.get('#option-label-color-93-item-60').click();
-    cy.get('#qty').clear().type('1');
-    cy.get('#product-addtocart-button').click();
+    homePage.womenPage();
+    homePage.womenTeesPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.divaGymTee().click();
+    shopPageElements.divaGymTeePrice().contains('$32.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.sizeL().click();
+    shopPageElements.colorYellow().click();
+    shopPageElements.quantityField().clear().type('1');
+    shopPage.addToCart();
   });
 });

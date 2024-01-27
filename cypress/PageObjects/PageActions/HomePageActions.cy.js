@@ -80,4 +80,16 @@ export default class HomePageActions {
   gearWatchesPage(){
     homepageelement.gearWatches().click();
   }
+  salePage(){
+    homepageelement.saleTab().click();
+  }
+  womenDealsPage(){
+    homepageelement.womenDeals().click();
+  }
+  menDealsPage(){
+    homepageelement.menDeals().click();
+  }
+  lumaDealsPage(){
+    homepageelement.lumaDeals().click();
+  }
 }

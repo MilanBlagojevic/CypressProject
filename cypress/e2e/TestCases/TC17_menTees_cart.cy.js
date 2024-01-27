@@ -5,9 +5,13 @@ Cypress.on("uncaught:exception", (err, runnable) => {
   });
 
 import HomePageActions from "../../PageObjects/PageActions/HomePageActions.cy";
+import ShoppingPageActions from "../../PageObjects/PageActions/ShoppingPageActions.cy";
+import ShoppingPageElements from "../../PageObjects/PageElements/ShoppingPageElements.cy";
 
 describe("TC17 - Men_Tees", () => {
   const homePage = new HomePageActions();
+  const shopPage = new ShoppingPageActions();
+  const shopPageElements = new ShoppingPageElements();
 
   beforeEach(() => {
     homePage.navigateToURL();
@@ -19,16 +23,15 @@ describe("TC17 - Men_Tees", () => {
 
   it("Add to Cart functionality", () => {
 
-    cy.get('#ui-id-5 > :nth-child(2)').click();
-    cy.get('.categories-menu > :nth-child(2) > :nth-child(3) > a').click();
-    cy.get(':nth-child(4) > .toolbar-sorter > #sorter').select('Price');
-
-    cy.get(':nth-child(6) > .product-item-info > .details > .name > .product-item-link').click();
-    cy.get('#product-price-542 > .price').contains('$29.00');
-    cy.get('.stock > span').contains('In stock');
-    cy.get('#option-label-size-143-item-168').click();
-    cy.get('#option-label-color-93-item-60').click();
-    cy.get('#qty').clear().type('4');
-    cy.get('#product-addtocart-button').click();
+    homePage.menPage();
+    homePage.menTeesPage();
+    shopPageElements.sortByDropDown().select('Price');
+    shopPageElements.zoltanGymTee().click();
+    shopPageElements.zoltanGymTeePrice().contains('$29.00');
+    shopPageElements.inStock().contains('In stock');
+    shopPageElements.sizeM().click();
+    shopPageElements.colorYellow().click();
+    shopPageElements.quantityField().clear().type('4');
+    shopPage.addToCart();
   });
 });

@@ -68,4 +68,16 @@ export default class HomePageElements {
   gearWatches(){
     return cy.get(or.homepage.gearWatches)
   }
+  saleTab(){
+    return cy.get(or.homepage.saleTab)
+  }
+  womenDeals(){
+    return cy.get(or.homepage.womenDeals)
+  }
+  menDeals(){
+    return cy.get(or.homepage.menDeals)
+  }
+  lumaDeals(){
+    return cy.get(or.homepage.lumaDeals)
+  }
 }
